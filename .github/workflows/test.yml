@@ -1,0 +1,35 @@
+name: Test formulae
+
+on:
+  pull_request:
+    paths:
+      - "Formula/**"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install and run every formula
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/brokkai"
+          ln -s "$PWD" "$(brew --repository)/Library/Taps/brokkai/homebrew-tap"
+          for f in Formula/*.rb; do
+            name=$(basename "$f" .rb)
+            case "$name" in
+              mjolnir) cmd=mj ;;
+              *) cmd=$name ;;
+            esac
+            brew install "brokkai/tap/$name"
+            "$(brew --prefix)/bin/$cmd" --version
+          done

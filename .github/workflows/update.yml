@@ -1,0 +1,59 @@
+name: Update formulae
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-formulae
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate formulae from latest releases
+        run: ./scripts/update-formulae.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet -- Formula; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat -- Formula
+          fi
+
+      - name: Smoke-test changed formulae
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/brokkai"
+          ln -s "$PWD" "$(brew --repository)/Library/Taps/brokkai/homebrew-tap"
+          for f in $(git diff --name-only -- Formula); do
+            name=$(basename "$f" .rb)
+            case "$name" in
+              mjolnir) cmd=mj ;;
+              *) cmd=$name ;;
+            esac
+            brew install "brokkai/tap/$name"
+            "$(brew --prefix)/bin/$cmd" --version
+          done
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula
+          names=$(git diff --cached --name-only -- Formula | sed 's|Formula/||; s|\.rb||' | paste -sd ', ' -)
+          git commit -m "Update $names to latest releases"
+          git push
