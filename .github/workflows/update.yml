@@ -36,6 +36,7 @@ jobs:
       - name: Smoke-test changed formulae
         if: steps.diff.outputs.changed == 'true'
         run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           mkdir -p "$(brew --repository)/Library/Taps/brokkai"
           ln -s "$PWD" "$(brew --repository)/Library/Taps/brokkai/homebrew-tap"
           for f in $(git diff --name-only -- Formula); do
