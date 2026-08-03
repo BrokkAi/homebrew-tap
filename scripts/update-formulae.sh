@@ -60,7 +60,7 @@ class Mjolnir < Formula
   # not "1": clap parses the env value strictly as a boolean.
   def install
     libexec.install Dir["*"]
-    bin.write_env_script libexec/"mj", MJOLNIR_NO_UPDATE_CHECK: "true"
+    (bin/"mj").write_env_script libexec/"mj", MJOLNIR_NO_UPDATE_CHECK: "true"
   end
 
   test do
