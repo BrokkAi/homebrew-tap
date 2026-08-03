@@ -101,7 +101,7 @@ class Anvil < Formula
 
   def install
     bin.install "anvil"
-    doc.install Dir["LICENSE*", "*.md", "*.html", "*.txt"]
+    doc.install Dir["LICENSE*", "*.md", "*.html", "*.txt"].uniq
   end
 
   test do
@@ -145,7 +145,7 @@ class Bifrost < Formula
 
   def install
     bin.install "bifrost"
-    doc.install Dir["LICENSE*", "*.md", "*.html", "*.txt"]
+    doc.install Dir["LICENSE*", "*.md", "*.html", "*.txt"].uniq
   end
 
   test do

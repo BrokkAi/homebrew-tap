@@ -23,7 +23,7 @@ class Anvil < Formula
 
   def install
     bin.install "anvil"
-    doc.install Dir["LICENSE*", "*.md", "*.html", "*.txt"]
+    doc.install Dir["LICENSE*", "*.md", "*.html", "*.txt"].uniq
   end
 
   test do
