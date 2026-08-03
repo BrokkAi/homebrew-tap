@@ -6,10 +6,14 @@ prebuilt binaries attached to each project's GitHub releases.
 ## Usage
 
 ```sh
-brew install brokkai/tap/mjolnir   # installs the `mj` terminal client
-brew install brokkai/tap/anvil     # ACP server
-brew install brokkai/tap/bifrost   # static analysis engine
+brew tap brokkai/tap
+brew install mjolnir   # installs the `mj` terminal client
+brew install anvil     # ACP server
+brew install bifrost   # static analysis engine
 ```
+
+The one-line `brew install brokkai/tap/<formula>` shorthand is not reliable on
+Linuxbrew; tap first.
 
 macOS (universal), Linux x86_64, and Linux aarch64 are supported.
 
