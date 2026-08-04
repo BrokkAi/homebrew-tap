@@ -20,7 +20,7 @@ macOS (universal), Linux x86_64, and Linux aarch64 are supported.
 ## How updates work
 
 The formulae in `Formula/` are generated — do not edit them by hand. A
-[scheduled workflow](.github/workflows/update.yml) runs every 6 hours:
+[scheduled workflow](.github/workflows/update.yml) runs every 2 hours:
 
 1. `scripts/update-formulae.sh` queries each repo's latest GitHub release and
    regenerates the formulae, taking checksums from the `.sha256` files
