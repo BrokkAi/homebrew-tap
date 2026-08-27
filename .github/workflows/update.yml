@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: update-formulae
@@ -64,3 +65,18 @@ jobs:
           names=$(git diff --cached --name-only -- Formula | sed 's|Formula/||; s|\.rb||' | paste -sd ', ' -)
           git commit -m "Update $names to latest releases"
           git push
+
+      - name: Open issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Update formulae workflow failed"
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="@foundev the scheduled formula update failed: $run_url"
+          existing=$(gh issue list --repo "${{ github.repository }}" --state open --search "in:title \"$title\"" --json number -q '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "${{ github.repository }}" --body "$body"
+          else
+            gh issue create --repo "${{ github.repository }}" --title "$title" --body "$body"
+          fi
