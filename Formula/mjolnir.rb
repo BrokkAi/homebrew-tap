@@ -24,11 +24,12 @@ class Mjolnir < Formula
   # mj ships helper binaries (mj-voice-worker and a bundled anvil) that must
   # live next to it, so everything stays in libexec and only mj is exposed.
   # This also avoids colliding with the standalone anvil formula.
-  # Tell mj that Homebrew owns this installation. Its startup check then follows
-  # this formula and recommends brew upgrade instead of replacing Cellar files.
+  # Homebrew owns this installation, so mj's own startup update check is
+  # disabled; updates arrive through brew upgrade. The value must be "true",
+  # not "1": clap parses the env value strictly as a boolean.
   def install
     libexec.install Dir["*"]
-    (bin/"mj").write_env_script libexec/"mj", MJOLNIR_MANAGED_BY_HOMEBREW: "true"
+    (bin/"mj").write_env_script libexec/"mj", MJOLNIR_NO_UPDATE_CHECK: "true"
   end
 
   test do
