@@ -2,22 +2,22 @@
 class Anvil < Formula
   desc "Portable Rust Agent Client Protocol (ACP) server with model routing"
   homepage "https://github.com/brokkai/anvil"
-  version "0.28.3"
+  version "0.28.4"
   license "LGPL-3.0-only"
 
   on_macos do
-    url "https://github.com/brokkai/anvil/releases/download/v0.28.3/brokk-anvil-v0.28.3-universal-apple-darwin.zip"
-    sha256 "5c311ab32398fb6fa03f006b7249ccb6c8010621e324dd248d3dec08a6cb5491"
+    url "https://github.com/brokkai/anvil/releases/download/v0.28.4/brokk-anvil-v0.28.4-universal-apple-darwin.zip"
+    sha256 "539492d459a483ac9ff32fa4710d7f14ae22b1cc0f35d2bfe63d685fe29779b9"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/brokkai/anvil/releases/download/v0.28.3/brokk-anvil-v0.28.3-x86_64-unknown-linux-gnu.zip"
-      sha256 "637f76f13d7ec248cbc837782bc1217f2b8c7972e27136a4102de5521efb1fd9"
+      url "https://github.com/brokkai/anvil/releases/download/v0.28.4/brokk-anvil-v0.28.4-x86_64-unknown-linux-gnu.zip"
+      sha256 "020159f64297e66ebf20d051aec4be5aef6639e6fd94880a2925e2993617b2b0"
     end
     on_arm do
-      url "https://github.com/brokkai/anvil/releases/download/v0.28.3/brokk-anvil-v0.28.3-aarch64-unknown-linux-gnu.zip"
-      sha256 "94e5d881e8ea77b31bf9e3ff24d850edd0818f87baa4c0f3855453a33c997c99"
+      url "https://github.com/brokkai/anvil/releases/download/v0.28.4/brokk-anvil-v0.28.4-aarch64-unknown-linux-gnu.zip"
+      sha256 "7f20055cf2e526c69c37a879dfb335ecf73e72788df8db83ae53c1933d199940"
     end
   end
 
