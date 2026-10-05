@@ -9,6 +9,7 @@ prebuilt binaries attached to each project's GitHub releases.
 brew tap brokkai/tap
 brew trust brokkai/tap
 brew install --formula brokkai/tap/mjolnir   # installs the `mj` terminal client
+brew install --formula brokkai/tap/micro-acp # Go ACP terminal client
 brew install --formula brokkai/tap/anvil     # ACP server
 brew install --formula brokkai/tap/bifrost   # static analysis engine
 ```
