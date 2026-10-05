@@ -49,11 +49,12 @@ jobs:
           for f in $(git diff --name-only -- Formula); do
             name=$(basename "$f" .rb)
             case "$name" in
-              mjolnir) cmd=mj ;;
-              *) cmd=$name ;;
+              mjolnir) cmd=mj; vercmd=--version ;;
+              brokk-town) cmd=bt; vercmd=version ;;
+              *) cmd=$name; vercmd=--version ;;
             esac
             brew install "brokkai/tap/$name"
-            "$(brew --prefix)/bin/$cmd" --version
+            "$(brew --prefix)/bin/$cmd" "$vercmd"
           done
 
       - name: Commit and push
