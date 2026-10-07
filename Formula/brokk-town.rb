@@ -2,28 +2,28 @@
 class BrokkTown < Formula
   desc "Local town of coordinated repository agents, with a browser and CLI"
   homepage "https://github.com/brokkai/brokk-town"
-  version "0.9.0"
+  version "0.10.0"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/brokkai/brokk-town/releases/download/v0.9.0/brokk-town_v0.9.0_darwin_amd64.tar.gz"
-      sha256 "6c41abd6d258a722de6b6eadfcff18ceb6a1baee61201b7e102b3ab07ed06219"
+      url "https://github.com/brokkai/brokk-town/releases/download/v0.10.0/brokk-town_v0.10.0_darwin_amd64.tar.gz"
+      sha256 "3b702e457bbaeb1393169aa1b956426ecc2d623ccb453cefa7b04b16246f47f0"
     end
     on_arm do
-      url "https://github.com/brokkai/brokk-town/releases/download/v0.9.0/brokk-town_v0.9.0_darwin_arm64.tar.gz"
-      sha256 "0e22fdd473a104b94f6541f97ae6ebf601bf2c7135d21186ba4a97fae93d6109"
+      url "https://github.com/brokkai/brokk-town/releases/download/v0.10.0/brokk-town_v0.10.0_darwin_arm64.tar.gz"
+      sha256 "9ab2c559c80eacecc5ec13c9c87c1b56480657a12b5660be7ac31d1c2033c78e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/brokkai/brokk-town/releases/download/v0.9.0/brokk-town_v0.9.0_linux_amd64.tar.gz"
-      sha256 "28f5608fff85db98a76281c8ffba4dfac5be1526bc24e2857614998582d57330"
+      url "https://github.com/brokkai/brokk-town/releases/download/v0.10.0/brokk-town_v0.10.0_linux_amd64.tar.gz"
+      sha256 "dff8af657934fa59d88bb2fdeb16a73118b0f2accd4a7fceda01dd0769834b80"
     end
     on_arm do
-      url "https://github.com/brokkai/brokk-town/releases/download/v0.9.0/brokk-town_v0.9.0_linux_arm64.tar.gz"
-      sha256 "f98147a9fbde4e14510e78701dc6048a9cd5732eee04f51f2f7a6ede7a07fada"
+      url "https://github.com/brokkai/brokk-town/releases/download/v0.10.0/brokk-town_v0.10.0_linux_arm64.tar.gz"
+      sha256 "4394dd62d8db6b6718a377ba003b51b1b0e0a058e037cbbfd89015f29f365882"
     end
   end
 
