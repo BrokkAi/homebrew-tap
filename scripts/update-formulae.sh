@@ -31,9 +31,10 @@ checksums_txt_sha256() {
 }
 
 generate_mjolnir() {
-  local v mac linux_x86 linux_arm
+  local v mac_x86 mac_arm linux_x86 linux_arm
   v=$(latest_version mjolnir)
-  mac=$(asset_sha256 mjolnir "brokk-mjolnir-v$v-universal-apple-darwin.tar.gz" "$v")
+  mac_x86=$(asset_sha256 mjolnir "brokk-mjolnir-v$v-x86_64-apple-darwin.tar.gz" "$v")
+  mac_arm=$(asset_sha256 mjolnir "brokk-mjolnir-v$v-aarch64-apple-darwin.tar.gz" "$v")
   linux_x86=$(asset_sha256 mjolnir "brokk-mjolnir-v$v-x86_64-unknown-linux-gnu.tar.gz" "$v")
   linux_arm=$(asset_sha256 mjolnir "brokk-mjolnir-v$v-aarch64-unknown-linux-gnu.tar.gz" "$v")
 
@@ -46,8 +47,14 @@ class Mjolnir < Formula
   license "GPL-3.0-only"
 
   on_macos do
-    url "https://github.com/brokkai/mjolnir/releases/download/v$v/brokk-mjolnir-v$v-universal-apple-darwin.tar.gz"
-    sha256 "$mac"
+    on_intel do
+      url "https://github.com/brokkai/mjolnir/releases/download/v$v/brokk-mjolnir-v$v-x86_64-apple-darwin.tar.gz"
+      sha256 "$mac_x86"
+    end
+    on_arm do
+      url "https://github.com/brokkai/mjolnir/releases/download/v$v/brokk-mjolnir-v$v-aarch64-apple-darwin.tar.gz"
+      sha256 "$mac_arm"
+    end
   end
 
   on_linux do
