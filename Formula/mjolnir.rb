@@ -2,28 +2,28 @@
 class Mjolnir < Formula
   desc "Rust terminal client for Agent Client Protocol (ACP) coding agents"
   homepage "https://github.com/brokkai/mjolnir"
-  version "2.61.1"
+  version "2.61.2"
   license "GPL-3.0-only"
 
   on_macos do
     on_intel do
-      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.1/brokk-mjolnir-v2.61.1-x86_64-apple-darwin.tar.gz"
-      sha256 "331adde0ed6246b94cd5820c2fd49f6ea2dc141d562770c73fa5a0a808cb6213"
+      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.2/brokk-mjolnir-v2.61.2-x86_64-apple-darwin.tar.gz"
+      sha256 "dd65b42f93d9ef0cd7b90f46836b97d85bea2a8054b3da7240df1b49e28534a3"
     end
     on_arm do
-      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.1/brokk-mjolnir-v2.61.1-aarch64-apple-darwin.tar.gz"
-      sha256 "79e3b7c7ceecc778417e10f8aa7f679fe7a443a8b635a6850f9c1fa04019d43a"
+      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.2/brokk-mjolnir-v2.61.2-aarch64-apple-darwin.tar.gz"
+      sha256 "f4d9fb31dc371f7c12e1d65e0dd829f33fba00bdac04619abfa8c4efd02265d7"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.1/brokk-mjolnir-v2.61.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "97ec2519066b3377afc710396a84f538841a815e7870cf02d00f299dfa88f75b"
+      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.2/brokk-mjolnir-v2.61.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "930c0bbb969dd683f627f3112667c6fc400590a1d6f27f7a8fa2c752234d9f8d"
     end
     on_arm do
-      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.1/brokk-mjolnir-v2.61.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "476019a95c4419436aadd51234e6cbd1f5bddb1d124eec2fc38e80a01acef9d1"
+      url "https://github.com/brokkai/mjolnir/releases/download/v2.61.2/brokk-mjolnir-v2.61.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5f7f72a335990d33fac95fafef6b7672b1ff22afaad0e7d07f5556d006995591"
     end
   end
 
