@@ -6,8 +6,6 @@ prebuilt binaries attached to each project's GitHub releases.
 ## Usage
 
 ```sh
-brew tap brokkai/tap
-brew trust brokkai/tap
 brew install --formula brokkai/tap/mjolnir   # installs the `mj` terminal client
 brew install --formula brokkai/tap/micro-acp # Go ACP terminal client
 brew install --formula brokkai/tap/brokk-town # local town of repo agents (installs `bt`)
