@@ -2,22 +2,22 @@
 class Bifrost < Formula
   desc "Multi-language static analysis for agents, editors, and large repos"
   homepage "https://github.com/brokkai/bifrost"
-  version "0.14.3"
+  version "0.14.4"
   license "LGPL-3.0-only"
 
   on_macos do
-    url "https://github.com/brokkai/bifrost/releases/download/v0.14.3/bifrost-v0.14.3-universal-apple-darwin.tar.gz"
-    sha256 "128d47d247b76e7a3b01392a60a2ea797b8ff9d060a048c52c36dd6faf7b9014"
+    url "https://github.com/brokkai/bifrost/releases/download/v0.14.4/bifrost-v0.14.4-universal-apple-darwin.tar.gz"
+    sha256 "4107616cbd9e9377c7c1c568e9cd2082f5565a4fd9c3e27022a79acd201532ac"
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/brokkai/bifrost/releases/download/v0.14.3/bifrost-v0.14.3-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "780981c8b661fe41ec019f0444f381137fcdf973ddcbe6df5f4fc1fe41d0a074"
+      url "https://github.com/brokkai/bifrost/releases/download/v0.14.4/bifrost-v0.14.4-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "fac867ff504a8637190c99e6818eb6a1cfa93469683526a899f653d7db14685a"
     end
     on_arm do
-      url "https://github.com/brokkai/bifrost/releases/download/v0.14.3/bifrost-v0.14.3-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9da3abc94b5378465adc4e8743a6689b2f79345f59b5bf122115c82a943a3d80"
+      url "https://github.com/brokkai/bifrost/releases/download/v0.14.4/bifrost-v0.14.4-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "0503002227c501329e59b5630f747c5d7b9f5d16300d22002cfd72924ea862f4"
     end
   end
 
