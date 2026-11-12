@@ -2,28 +2,28 @@
 class MicroAcp < Formula
   desc "Go terminal client for the Agent Client Protocol (ACP)"
   homepage "https://github.com/brokkai/micro-acp"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.0/micro-acp_0.8.0_darwin_amd64.tar.gz"
-      sha256 "5d7ac50c6829fbfb64bbcfc53225c376ac5b1198602be713ad3125066d2f0527"
+      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.1/micro-acp_0.8.1_darwin_amd64.tar.gz"
+      sha256 "2301813162b1b00e6eac0b0f96fc1a0bf0ca98a492597be549f43e194466b6de"
     end
     on_arm do
-      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.0/micro-acp_0.8.0_darwin_arm64.tar.gz"
-      sha256 "c64349cefc00c99c8bc4866bba055217aa482120852095d30585858b3c1f7870"
+      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.1/micro-acp_0.8.1_darwin_arm64.tar.gz"
+      sha256 "329d1c1d6d1efe95a1bda037952a0a49ffd3c3a6281a767cf3b49090eb332515"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.0/micro-acp_0.8.0_linux_amd64.tar.gz"
-      sha256 "31808bdbe6bf49b64f8d32eb650d3ae5b296c64b2098326829530deb84126679"
+      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.1/micro-acp_0.8.1_linux_amd64.tar.gz"
+      sha256 "b82021f39dc4d19feb2d24f3e9389cca47ccaafc6b9ee2811e709228ea5f00f1"
     end
     on_arm do
-      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.0/micro-acp_0.8.0_linux_arm64.tar.gz"
-      sha256 "3335af6d75747e7f264a52da1489f127aedbe9ae144dcd9fc38a638198138b4b"
+      url "https://github.com/brokkai/micro-acp/releases/download/v0.8.1/micro-acp_0.8.1_linux_arm64.tar.gz"
+      sha256 "0a52580d22a9d82409447b82f86933f81e84b408a6b903711234fb24ffd384d0"
     end
   end
 
