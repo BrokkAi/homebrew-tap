@@ -37,7 +37,6 @@ jobs:
             name=$(basename "$f" .rb)
             case "$name" in
               mjolnir) cmd=mj; vercmd=--version ;;
-              brokk-town) cmd=bt; vercmd=version ;;
               *) cmd=$name; vercmd=--version ;;
             esac
             brew install "brokkai/tap/$name"
