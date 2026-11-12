@@ -8,7 +8,6 @@ prebuilt binaries attached to each project's GitHub releases.
 ```sh
 brew install --formula brokkai/tap/mjolnir   # installs the `mj` terminal client
 brew install --formula brokkai/tap/micro-acp # Go ACP terminal client
-brew install --formula brokkai/tap/brokk-town # local town of repo agents (installs `bt`)
 brew install --formula brokkai/tap/anvil     # ACP server
 brew install --formula brokkai/tap/bifrost   # static analysis engine
 ```
@@ -22,6 +21,13 @@ Recent Homebrew versions refuse to load formulae from an untrusted tap, hence
 without a prior `brew tap` is not reliable on Linuxbrew.
 
 macOS (universal), Linux x86_64, and Linux aarch64 are supported.
+
+## Removed formulae
+
+- **brokk-town** (`bt`) was removed. Town's releases no longer ship
+  prebuilt binaries (it now runs on Kubernetes), so there is nothing for this
+  tap to install. An existing install keeps working but will no longer be
+  upgraded. To clean it up: `brew uninstall brokk-town`.
 
 ## How updates work
 
